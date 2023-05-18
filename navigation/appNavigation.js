@@ -15,22 +15,22 @@ export default function AppNavigation () {
       <Stack.Screen
         name="WelcomeScreen"
         component={WelcomeScreen}
-        options={{headershown: false}}
+        options={{headerShown: false}}
       />
       <Stack.Screen
       name="HomeScreen"
       component={HomeScreen}
-      options={{headershown: false}}
+      options={{headerShown: false}}
     />
     <Stack.Screen
     name="LoginScreen"
     component={LoginScreen}
-    options={{headershown: false}}
+    options={{headerShown: false}}
   />
   <Stack.Screen
   name="SignupScreen"
   component={SignupScreen}
-  options={{headershown: false}}
+  options={{headerShown: false}}
 />
       
       </Stack.Navigator>
