@@ -7,33 +7,33 @@ import { COLORS } from '../../constants/theme';
 export default function WelcomeScreen() {
   const navigation = useNavigation();
   return (
-    <SafeAreaView className="flex-1" style={{ backgroundColor: COLORS.bg }}>
-      <View className="flex-1 flex justify-around my-4">
-        <Text className="text-white font-bold text-4xl text-center">
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.bg }}>
+      <View style={{ flex: 1, justifyContent: 'space-around', marginVertical: 4 }}>
+        <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 30, textAlign: 'center' }}>
           Let's Get Started!
         </Text>
-        <View className="flex-row justify-center">
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
           <Image
             source={require("../../assets/images/welcome.png")}
-            style={{ width: 450, height: 350 }}
+            style={{ width: 350, height: 350 }}
           />
         </View>
-        <View className="space-y-4">
+        <View style={{ marginTop: 4 }}>
           <TouchableOpacity
             onPress={() => navigation.navigate("SignupScreen")}
-            className="py-3 bg-yellow-400 mx-7 rounded-xl"
+            style={{ paddingVertical: 10, backgroundColor: 'yellow', marginHorizontal: 7, borderRadius: 10 }}
           >
-            <Text className="text-xl font-bold text-center text-gray-700">
+            <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center', color: 'gray' }}>
               Sign Up
             </Text>
           </TouchableOpacity>
-          <View className="flex-row justify-center">
-            <Text className="text-white font-semibold">
+          <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>
               Already have an account?
             </Text>
             <TouchableOpacity
               onPress={() => navigation.navigate("LoginScreen")}>
-              <Text className="font-semibold text-yellow-400"> Log In</Text>
+              <Text style={{ fontWeight: 'bold', color: 'yellow' }}> Log In</Text>
             </TouchableOpacity>
           </View>
         </View>
