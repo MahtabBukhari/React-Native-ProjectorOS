@@ -5,12 +5,15 @@ import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen.component';
 import HomeScreen from '../screens/HomeScreen/HomeScreen.component';
 import LoginScreen from '../screens/LoginScreen/LoginScreen.component';
 import SignupScreen from '../screens/SignupScreen/SignupScreen.component';
+import { StatusBar } from 'react-native';
+import {COLORS} from '../constants/theme'
 
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigation () {
   return (
     <NavigationContainer>
+    <StatusBar  barStyle="light-content" backgroundColor={COLORS.statusbarcolor} />
       <Stack.Navigator initialRouteName='WelcomeScreen'>
       <Stack.Screen
         name="WelcomeScreen"
