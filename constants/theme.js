@@ -2,14 +2,15 @@ const COLORS = {
   primary: "#312651",
   secondary: "#444262",
   tertiary: "#FF7754",
-  bg: '#877dfa',
-  statusbarcolor:'#6a51ae',
+  bg: "#877dfa",
+  statusbarcolor: "#6a51ae",
 
   gray: "#83829A",
   gray2: "#C1C0C8",
 
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+  red: "#FF0000"
 };
 
 const FONT = {
@@ -49,5 +50,9 @@ const SHADOWS = {
     elevation: 5,
   },
 };
+const errorText = {
+    color: 'red',
+    marginBottom: 10,
+  }
 
-export { COLORS, FONT, SIZES, SHADOWS };
+export { COLORS, FONT, SIZES, SHADOWS, errorText };

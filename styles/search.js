@@ -52,7 +52,11 @@ const styles = StyleSheet.create({
         fontFamily: FONT.bold,
         fontSize: SIZES.medium,
         color: COLORS.primary
-    }
+    },
+    errorText: {
+    color: 'red',
+    marginBottom: 10,
+  }
 });
 
 export default styles;
