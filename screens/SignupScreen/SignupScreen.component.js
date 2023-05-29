@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TouchableOpacity,Image,TextInput, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity,Image,TextInput, ScrollView } from 'react-native'
 import React, {useState} from 'react'
 import { COLORS } from '../../constants/theme'
 import {ArrowLeftIcon} from 'react-native-heroicons/solid'
