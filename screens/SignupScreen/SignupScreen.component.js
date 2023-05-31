@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import { COLORS } from '../../constants/theme'
 import {ArrowLeftIcon} from 'react-native-heroicons/solid'
 import { useNavigation } from '@react-navigation/native'
+import { createAuthUserWithEmailAndPassword } from '../../Firebase/firebase'
 import tw from 'twrnc'
 
 export default function SignupScreen() {
@@ -29,6 +30,17 @@ const handleValidEmail = (val) => {
   }
 };
 
+const signup = () => {
+  createAuthUserWithEmailAndPassword(email, pass)
+    .then((userCredential) => {
+     navigation.navigate("HomeScreen");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+}
 
   const handleSignUp = () => {
     if (name === "") {
@@ -51,11 +63,16 @@ const handleValidEmail = (val) => {
         setError({pass:"Please Enter Your Password"});
     }
    else{
-    navigation.navigate("LoginScreen");
+    signup();
    }
     
   };
 
+  // const handleSignUpFunctions = () => {
+  //   signup();
+  //   handleSignUp();
+    
+  // }
 
   return (
     <View style={tw.style("flex-1 bg-white", { backgroundColor: COLORS.bg })}>
@@ -111,7 +128,7 @@ const handleValidEmail = (val) => {
             {emailValidError === false && (
               <Text style={tw`text-red-800`}>
                 Please enter a valid email address
-              </Text> 
+              </Text>
             )}
 
             <Text style={tw`text-gray-700 ml-4`}>Password</Text>

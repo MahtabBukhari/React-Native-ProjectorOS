@@ -1,9 +1,10 @@
 
-import { View, Text,SafeAreaView,TouchableOpacity,StyleSheet,Image,TextInput,ScrollView } from 'react-native'
+import { View, Text,SafeAreaView,TouchableOpacity,StyleSheet,Image,TextInput,ScrollView, Alert } from 'react-native'
 import React, { useState } from "react";
 import { COLORS } from '../../constants/theme';
 import {ArrowLeftIcon} from 'react-native-heroicons/solid'
 import { useNavigation } from '@react-navigation/native'
+import {SignInAuthUserWithEmailAndPassword} from "../../Firebase/firebase";
 import tw from 'twrnc'
 
 export default function LoginScreen() {
@@ -28,6 +29,15 @@ const handleValidEmail = (val) => {
     setEmailValidError(true);
   }
 };
+const login = () => {
+  SignInAuthUserWithEmailAndPassword(email, pass)
+    .then((userCredential) => {
+      navigation.navigate("HomeScreen");
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+    });
+};
 
 
 const handleLogin = () => {
@@ -45,7 +55,8 @@ const handleLogin = () => {
         setError({pass:"Please Enter Your Password"});
     }
    else{
-    navigation.navigate("HomeScreen");
+    login();
+    // navigation.navigate("HomeScreen");
    }
     
   };

@@ -27,6 +27,7 @@
     "react-native-screens": "~3.20.0",
     "react-native-star-rating": "^1.0.8",
     "react-native-svg": "13.4.0",
+    "react-native-toast-message": "^2.1.6",
     "react-native-web": "~0.18.10",
     "twrnc": "^3.6.1",
     "validator": "^13.9.0"
