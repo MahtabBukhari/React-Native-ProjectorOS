@@ -13,8 +13,6 @@ import { ToastProvider } from 'react-native-toast-message';
 
 export default function App() {
   return (
-    <ToastProvider>
       <AppNavigation />
-    </ToastProvider>
   );
 }

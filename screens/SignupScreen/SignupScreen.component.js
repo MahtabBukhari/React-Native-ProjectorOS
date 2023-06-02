@@ -4,6 +4,8 @@ import { COLORS } from '../../constants/theme'
 import {ArrowLeftIcon} from 'react-native-heroicons/solid'
 import { useNavigation } from '@react-navigation/native'
 import { createAuthUserWithEmailAndPassword } from '../../Firebase/firebase'
+import Toast from "react-native-toast-message"
+import { showMessage } from "react-native-toast-message";
 import tw from 'twrnc'
 
 export default function SignupScreen() {
@@ -33,12 +35,16 @@ const handleValidEmail = (val) => {
 const signup = () => {
   createAuthUserWithEmailAndPassword(email, pass)
     .then((userCredential) => {
-     navigation.navigate("HomeScreen");
+      navigation.navigate("HomeScreen");
+      showMessage({
+        message: "Sign Up Successful",
+        type: "success",
+      });
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      // ..
+      // ...
     });
 }
 
@@ -67,12 +73,6 @@ const signup = () => {
    }
     
   };
-
-  // const handleSignUpFunctions = () => {
-  //   signup();
-  //   handleSignUp();
-    
-  // }
 
   return (
     <View style={tw.style("flex-1 bg-white", { backgroundColor: COLORS.bg })}>
