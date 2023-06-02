@@ -28,7 +28,25 @@ export function SignIn() {
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-          <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+          <div
+            className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12"
+            style={{
+              boxSizing: 'inherit',
+              display: 'flex',
+              flexFlow: 'column nowrap',
+              alignItems: 'stretch',
+              justifyContent: 'flex-start',
+              willChange: 'transform, opacity, height',
+              borderRadius: '1.35em',
+              backgroundColor: 'rgb(255, 255, 255)',
+              transitionProperty:
+                'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+              transitionDuration: '200ms',
+              boxShadow: 'rgb(0 0 0 / 16%) 0px 24px 48px',
+              border: '1px solid transparent',
+              // width: '25rem',
+            }}
+          >
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
               <Link href="#" aria-label="Home">
                 <Image src="logo.jpeg" alt="Logo" width={56} height={56} />
@@ -279,7 +297,7 @@ export function SignIn() {
               </div>
             </form>
 
-                {/* Navigate the Sign Up page  */}
+            {/* Navigate the Sign Up page  */}
             <div>
               <p className="mt-5 text-sm text-gray-500">
                 No account?{' '}
@@ -291,7 +309,6 @@ export function SignIn() {
                 </a>
               </p>
             </div>
-
           </div>
         </div>
       </div>
